@@ -24,7 +24,7 @@ async def request_meeting(meeting_request: MeetingRequest):
         return "Meeting request rejected due to invalid meeting timing."
 
     if db.check_schedule_conflict(date, start_time, end_time):
-        return "Meeting request rejected due to overlapping "
+        return "Meeting request rejected due to overlapping of timing or date "
 
     db.add_meeting(date, start_time, end_time)
     return "Meeting request accepted, Thank You !"
